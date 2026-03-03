@@ -1,0 +1,2 @@
+F:\Games\ArmyaninGame\RoadGame\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+F:\Games\ArmyaninGame\RoadGame\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt
