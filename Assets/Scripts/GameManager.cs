@@ -4,9 +4,10 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-    public TextMeshProUGUI countdownText;
-    public CameraMovement cameraMovement;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public TextMeshProUGUI countdownText;
+    public RoadMover roadMover;
+
     void Start()
     {
         StartCoroutine(StartCountdown());
@@ -14,9 +15,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator StartCountdown()
     {
-        cameraMovement.canMove = false;
-
-        countdownText.gameObject.SetActive(true);
+        roadMover.canMove = false;
 
         for (int i = 3; i > 0; i--)
         {
@@ -28,12 +27,6 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         countdownText.gameObject.SetActive(false);
-        cameraMovement.canMove = true;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        roadMover.canMove = true;
     }
 }
