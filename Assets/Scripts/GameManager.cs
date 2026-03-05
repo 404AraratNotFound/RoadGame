@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public TextMeshProUGUI countdownText;
     public RoadMover roadMover;
+    public WheelRotator wheelRotator;
 
     void Start()
     {
@@ -16,6 +17,8 @@ public class GameManager : MonoBehaviour
     IEnumerator StartCountdown()
     {
         roadMover.canMove = false;
+        if (wheelRotator != null)
+            wheelRotator.SetSpinning(false);
 
         for (int i = 3; i > 0; i--)
         {
@@ -28,5 +31,7 @@ public class GameManager : MonoBehaviour
 
         countdownText.gameObject.SetActive(false);
         roadMover.canMove = true;
+        if (wheelRotator != null)
+            wheelRotator.SetSpinning(true);
     }
 }
