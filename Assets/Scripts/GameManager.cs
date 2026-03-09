@@ -1,17 +1,39 @@
-using UnityEngine;
-using TMPro;
 using System.Collections;
+using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public static GameManager Instance;
     public TextMeshProUGUI countdownText;
     public RoadMover roadMover;
     public WheelRotator wheelRotator;
 
+    [Header("UI")]
+    public GameObject gameOverUI;
+
+    Coroutine _countdownCoroutine;
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
+
     void Start()
     {
-        StartCoroutine(StartCountdown());
+        Time.timeScale = 1f;
+
+        if (gameOverUI != null)
+            gameOverUI.SetActive(false);
+
+        _countdownCoroutine = StartCoroutine(StartCountdown());
     }
 
     IEnumerator StartCountdown()
@@ -33,5 +55,29 @@ public class GameManager : MonoBehaviour
         roadMover.canMove = true;
         if (wheelRotator != null)
             wheelRotator.SetSpinning(true);
+    }
+
+    public void GameOver()
+    {
+        if (_countdownCoroutine != null)
+        {
+            StopCoroutine(_countdownCoroutine);
+            _countdownCoroutine = null;
+        }
+
+        if (roadMover != null)
+            roadMover.canMove = false;
+
+        if (wheelRotator != null)
+            wheelRotator.SetSpinning(false);
+
+        if (gameOverUI != null)
+            gameOverUI.SetActive(true);
+
+        // Stop gameplay updates.
+        Time.timeScale = 0f;
+
+        if (ScoreManager.Instance != null)
+            ScoreManager.Instance.SaveBestScore();
     }
 }
