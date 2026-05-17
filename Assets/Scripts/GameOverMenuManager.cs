@@ -12,6 +12,10 @@ public class GameOverMenuManager : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1f;
+        if (MusicManager.Instance != null)
+        {
+            MusicManager.Instance.PlayRandom();
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

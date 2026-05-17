@@ -144,9 +144,7 @@ MonoBehaviour:
 
     Armyanin : Path of infinity
 
-    Alpha
-
-    v 0.0.3'
+    v 0.1'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -395,6 +393,7 @@ MonoBehaviour:
   spawnChancePerPoint: 0.5
   keepAtLeastOneLaneFree: 1
   maxObstaclesPerSegment: 0
+  spawnedRoot: {fileID: 0}
 --- !u!1 &6326208098653063333
 GameObject:
   m_ObjectHideFlags: 0

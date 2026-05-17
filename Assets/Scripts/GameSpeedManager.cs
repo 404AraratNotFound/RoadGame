@@ -7,6 +7,8 @@ public class GameSpeedManager : MonoBehaviour
     [Header("Speed")]
     public float speed = 10f;
     public float acceleration = 0.2f;
+    [Min(0f)]
+    public float speedLimit = 0f;
 
     [Header("Step increase (optional)")]
     public bool useStepIncrease;
@@ -44,6 +46,9 @@ public class GameSpeedManager : MonoBehaviour
         {
             speed += acceleration * Time.deltaTime;
         }
+
+        if (speedLimit > 0f)
+            speed = Mathf.Min(speed, speedLimit);
 
         roadMover.speed = speed;
     }

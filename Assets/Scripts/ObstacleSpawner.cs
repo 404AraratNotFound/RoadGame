@@ -16,8 +16,45 @@ public class ObstacleSpawner : MonoBehaviour
     [Min(0)]
     public int maxObstaclesPerSegment = 0;
 
+    [Header("Runtime")]
+    [Tooltip("Parent for spawned obstacles. If not set, it will be created automatically.")]
+    public Transform spawnedRoot;
+
     void Start()
     {
+        EnsureSpawnedRoot();
+        RespawnObstacles();
+    }
+
+    void EnsureSpawnedRoot()
+    {
+        if (spawnedRoot != null)
+            return;
+
+        Transform existing = transform.Find("SpawnedObstacles");
+        if (existing != null)
+        {
+            spawnedRoot = existing;
+            return;
+        }
+
+        GameObject go = new GameObject("SpawnedObstacles");
+        spawnedRoot = go.transform;
+        spawnedRoot.SetParent(transform, false);
+    }
+
+    public void RespawnObstacles()
+    {
+        EnsureSpawnedRoot();
+
+        if (spawnedRoot != null)
+        {
+            for (int i = spawnedRoot.childCount - 1; i >= 0; i--)
+            {
+                Destroy(spawnedRoot.GetChild(i).gameObject);
+            }
+        }
+
         SpawnObstacles();
     }
 
@@ -25,6 +62,8 @@ public class ObstacleSpawner : MonoBehaviour
     {
         if (obstacles == null || obstacles.Length == 0 || spawnPoints == null || spawnPoints.Length == 0)
             return;
+
+        EnsureSpawnedRoot();
 
         int maxAllowed = maxObstaclesPerSegment;
         if (keepAtLeastOneLaneFree)
@@ -73,7 +112,7 @@ public class ObstacleSpawner : MonoBehaviour
             if (obstacles[randomObstacle] == null)
                 continue;
 
-            Instantiate(obstacles[randomObstacle], point.position, Quaternion.identity, transform);
+            Instantiate(obstacles[randomObstacle], point.position, Quaternion.identity, spawnedRoot != null ? spawnedRoot : transform);
         }
     }
 }

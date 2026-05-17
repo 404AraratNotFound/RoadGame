@@ -59,6 +59,11 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        if (MusicManager.Instance != null)
+        {
+            MusicManager.Instance.StopMusic();
+        }
+
         if (_countdownCoroutine != null)
         {
             StopCoroutine(_countdownCoroutine);
