@@ -3,6 +3,16 @@ using UnityEngine.SceneManagement;
 
 public class GameOverMenuManager : MonoBehaviour
 {
+    public AudioSource gameOverAudioSource;
+
+    public void PlayGameOverSound()
+    {
+        if (gameOverAudioSource == null)
+            return;
+
+        gameOverAudioSource.Play();
+    }
+
     public void LoadMainMenu()
     {
         Time.timeScale = 1f;

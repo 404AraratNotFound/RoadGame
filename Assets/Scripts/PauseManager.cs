@@ -4,12 +4,18 @@ using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
+    public static PauseManager Instance;
     public GameObject pauseMenu;
     public GameObject scoreUi;
     public string settingsSceneName = "Settings";
     public int settingsSortingOrder = 1000;
 
     bool isPaused = false;
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
     public void Pause()
     {
@@ -39,6 +45,22 @@ public class PauseManager : MonoBehaviour
         }
         Time.timeScale = 1f;
         isPaused = false;
+    }
+
+    public void ShowPauseMenu()
+    {
+        if (pauseMenu != null)
+        {
+            pauseMenu.SetActive(true);
+        }
+
+        if (scoreUi != null)
+        {
+            scoreUi.SetActive(false);
+        }
+
+        Time.timeScale = 0f;
+        isPaused = true;
     }
 
     public void LoadMainMenu()

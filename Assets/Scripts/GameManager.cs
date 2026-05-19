@@ -79,6 +79,12 @@ public class GameManager : MonoBehaviour
         if (gameOverUI != null)
             gameOverUI.SetActive(true);
 
+        var gameOverMenu = FindObjectOfType<GameOverMenuManager>();
+        if (gameOverMenu != null)
+        {
+            gameOverMenu.PlayGameOverSound();
+        }
+
         // Stop gameplay updates.
         Time.timeScale = 0f;
 

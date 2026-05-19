@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public string settingsSceneName = "Settings";
 
     public void NewGame()
     {
@@ -14,7 +15,14 @@ public class MainMenu : MonoBehaviour
     }
     public void Settings()
     {
-        SceneManager.LoadScene(1);
+        if (string.IsNullOrEmpty(settingsSceneName))
+            return;
+
+        var settingsScene = SceneManager.GetSceneByName(settingsSceneName);
+        if (settingsScene.isLoaded)
+            return;
+
+        SceneManager.LoadSceneAsync(settingsSceneName, LoadSceneMode.Additive);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

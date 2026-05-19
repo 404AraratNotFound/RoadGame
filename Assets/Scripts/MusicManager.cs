@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MusicManager : MonoBehaviour
 {
@@ -31,13 +32,29 @@ public class MusicManager : MonoBehaviour
         PlayRandom();
     }
 
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        ApplySavedVolume();
+    }
+
     public void SetVolume(float volume)
     {
         if (audioSource == null)
             return;
 
-        audioSource.volume = volume;
+        audioSource.volume = Mathf.Clamp01(volume);
         PlayerPrefs.SetFloat("MusicVolume", volume);
+        PlayerPrefs.Save();
     }
 
     public void PauseMusic()
@@ -75,8 +92,16 @@ public class MusicManager : MonoBehaviour
 
         audioSource.clip = clips[Random.Range(0, clips.Length)];
         audioSource.loop = true;
-        audioSource.volume = PlayerPrefs.GetFloat("MusicVolume", defaultVolume);
+        ApplySavedVolume();
         audioSource.Play();
+    }
+
+    void ApplySavedVolume()
+    {
+        if (audioSource == null)
+            return;
+
+        audioSource.volume = Mathf.Clamp01(PlayerPrefs.GetFloat("MusicVolume", defaultVolume));
     }
 
     public void PlayRandomIfStopped()
