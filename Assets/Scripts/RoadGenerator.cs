@@ -37,11 +37,17 @@ public class RoadGenerator : MonoBehaviour
 
         firstSegment.position = new Vector3(0, 0, newZ);
 
-        // Respawn obstacles on the segment when it gets recycled to the front.
+        // Respawn obstacles and holes on the segment when it gets recycled to the front.
         ObstacleSpawner spawner = firstSegment.GetComponentInChildren<ObstacleSpawner>();
         if (spawner != null)
         {
             spawner.RespawnObstacles();
+        }
+
+        HoleSpawner holeSpawner = firstSegment.GetComponentInChildren<HoleSpawner>();
+        if (holeSpawner != null)
+        {
+            holeSpawner.RespawnHoles();
         }
 
         segments.Add(firstSegment);

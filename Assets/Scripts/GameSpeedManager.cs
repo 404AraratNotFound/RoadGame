@@ -17,6 +17,8 @@ public class GameSpeedManager : MonoBehaviour
     public float stepIncrease = 1f;
 
     float _nextStepTime;
+    float _speedMultiplier = 1f;
+    Coroutine _temporarySlowCoroutine;
 
     void Update()
     {
@@ -50,6 +52,30 @@ public class GameSpeedManager : MonoBehaviour
         if (speedLimit > 0f)
             speed = Mathf.Min(speed, speedLimit);
 
-        roadMover.speed = speed;
+        roadMover.speed = speed * _speedMultiplier;
+    }
+
+    public void ApplyTemporarySlow(float multiplier, float durationSeconds)
+    {
+        if (multiplier <= 0f)
+            multiplier = 0.1f;
+
+        if (_temporarySlowCoroutine != null)
+        {
+            StopCoroutine(_temporarySlowCoroutine);
+        }
+
+        _temporarySlowCoroutine = StartCoroutine(TemporarySlow(multiplier, durationSeconds));
+    }
+
+    System.Collections.IEnumerator TemporarySlow(float multiplier, float durationSeconds)
+    {
+        _speedMultiplier = multiplier;
+
+        if (durationSeconds > 0f)
+            yield return new WaitForSeconds(durationSeconds);
+
+        _speedMultiplier = 1f;
+        _temporarySlowCoroutine = null;
     }
 }

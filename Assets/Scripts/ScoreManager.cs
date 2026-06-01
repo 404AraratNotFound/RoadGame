@@ -74,6 +74,7 @@ public class ScoreManager : MonoBehaviour
         UpdateUI();
     }
 
+
     void UpdateUI()
     {
         if (scoreText != null)

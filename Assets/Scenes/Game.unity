@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 983495934}
     m_Modifications:
+    - target: {fileID: 4378014986989230500, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 5601097868377311186, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
       propertyPath: m_Name
       value: RoadSegment
@@ -174,10 +178,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3656958325209480457, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
 --- !u!1 &41923671
 GameObject:
@@ -1384,6 +1385,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 983495934}
     m_Modifications:
+    - target: {fileID: 4378014986989230500, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 5601097868377311186, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
       propertyPath: m_Name
       value: RoadSegment (1)
@@ -1431,10 +1436,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3656958325209480457, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
 --- !u!1 &698384215
 GameObject:
@@ -1573,6 +1575,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 698384215}
   m_CullTransparentMesh: 1
+--- !u!1 &737826137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 737826139}
+  - component: {fileID: 737826138}
+  m_Layer: 0
+  m_Name: GlobalVolume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &737826138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737826137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 4ef86fa4c67c4cd4e995e32c3ba66750, type: 2}
+--- !u!4 &737826139
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737826137}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 622.6938, y: 910.09296, z: 684.53766}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &969588348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1581,6 +1632,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 983495934}
     m_Modifications:
+    - target: {fileID: 4378014986989230500, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 5601097868377311186, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
       propertyPath: m_Name
       value: RoadSegment (5)
@@ -1628,10 +1683,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3656958325209480457, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
 --- !u!1 &983495931
 GameObject:
@@ -1709,6 +1761,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 983495934}
     m_Modifications:
+    - target: {fileID: 4378014986989230500, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 5601097868377311186, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
       propertyPath: m_Name
       value: RoadSegment (2)
@@ -1756,10 +1812,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3656958325209480457, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
 --- !u!1 &1140910134
 GameObject:
@@ -1938,7 +1991,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize2D: {x: 0.5, y: 0.5}
   m_Shadows:
-    m_Type: 1
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1971,7 +2024,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -1995,7 +2048,7 @@ Transform:
   m_GameObject: {fileID: 1219164676}
   serializedVersion: 2
   m_LocalRotation: {x: 0.29357782, y: -0.20642203, z: 0.0650846, w: 0.9311101}
-  m_LocalPosition: {x: 13.4, y: 8, z: -0.76}
+  m_LocalPosition: {x: 10.34, y: 9.63, z: -0.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2199,6 +2252,10 @@ PrefabInstance:
     - target: {fileID: 2672587344073929106, guid: 0f618d9857064e241a7b14cb2123b5d8, type: 3}
       propertyPath: m_Name
       value: Road Roller
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672587344073929106, guid: 0f618d9857064e241a7b14cb2123b5d8, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2672587344073929107, guid: 0f618d9857064e241a7b14cb2123b5d8, type: 3}
       propertyPath: m_LocalScale.x
@@ -2525,8 +2582,8 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -2820,7 +2877,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1618555335
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3022,6 +3079,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 983495934}
     m_Modifications:
+    - target: {fileID: 4378014986989230500, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 5601097868377311186, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
       propertyPath: m_Name
       value: RoadSegment (3)
@@ -3069,10 +3130,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3656958325209480457, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
 --- !u!4 &1758619652 stripped
 Transform:
@@ -3472,6 +3530,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 983495934}
     m_Modifications:
+    - target: {fileID: 4378014986989230500, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 5601097868377311186, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
       propertyPath: m_Name
       value: RoadSegment (6)
@@ -3519,10 +3581,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3656958325209480457, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
 --- !u!4 &1838404044 stripped
 Transform:
@@ -3553,6 +3612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 30
   roadHalfWidth: 3
+  inputBlocked: 0
 --- !u!114 &1886105045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3793,6 +3853,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 983495934}
     m_Modifications:
+    - target: {fileID: 4378014986989230500, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 5601097868377311186, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
       propertyPath: m_Name
       value: RoadSegment (4)
@@ -3840,10 +3904,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3656958325209480457, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0159cfe797d6c8f49ba8feb3e6a51188, type: 3}
 --- !u!1 &2037079189
 GameObject:
@@ -4243,3 +4304,4 @@ SceneRoots:
   - {fileID: 2104537972}
   - {fileID: 1964142884}
   - {fileID: 2037079192}
+  - {fileID: 737826139}
