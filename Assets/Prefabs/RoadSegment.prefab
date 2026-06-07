@@ -324,7 +324,7 @@ MonoBehaviour:
   - {fileID: 8555485460785601229}
   - {fileID: 5541553522554115506}
   - {fileID: 4804821839457271651}
-  spawnChancePerPoint: 0.2
+  spawnChancePerPoint: 0.15
   spawnedRoot: {fileID: 0}
 --- !u!1 &6326208098653063333
 GameObject:

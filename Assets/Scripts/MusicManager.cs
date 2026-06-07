@@ -5,9 +5,17 @@ public class MusicManager : MonoBehaviour
 {
     public static MusicManager Instance;
     public AudioSource audioSource;
+    public AudioSource voiceAudioSource;
+    public AudioSource fillVoiceAudioSource;
     public string musicResourcesPath = "Music";
+    public string startVoiceResourcesPath = "Voice/Start";
+    public string fillVoiceResourcesPath = "Voice/Fill";
     public float defaultVolume = 1f;
+    public float voiceVolume = 1f;
+    public bool playStartVoiceOnStart = true;
     public bool dontDestroyOnLoad = true;
+    bool playStartVoiceOnNextSceneLoad;
+    bool playMusicOnNextSceneLoad;
 
     void Awake()
     {
@@ -30,6 +38,11 @@ public class MusicManager : MonoBehaviour
             audioSource = GetComponent<AudioSource>();
 
         PlayRandom();
+
+        if (playStartVoiceOnStart)
+        {
+            PlayRandomStartVoice();
+        }
     }
 
     void OnEnable()
@@ -45,6 +58,18 @@ public class MusicManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         ApplySavedVolume();
+
+        if (playMusicOnNextSceneLoad)
+        {
+            playMusicOnNextSceneLoad = false;
+            PlayRandom();
+        }
+
+        if (playStartVoiceOnNextSceneLoad)
+        {
+            playStartVoiceOnNextSceneLoad = false;
+            PlayRandomStartVoice();
+        }
     }
 
     public void SetVolume(float volume)
@@ -113,5 +138,38 @@ public class MusicManager : MonoBehaviour
         {
             PlayRandom();
         }
+    }
+
+    public void PlayRandomStartVoice()
+    {
+        PlayRandomVoice(startVoiceResourcesPath);
+    }
+
+    public void QueueStartVoiceOnNextSceneLoad()
+    {
+        playStartVoiceOnNextSceneLoad = true;
+    }
+
+    public void QueueMusicOnNextSceneLoad()
+    {
+        playMusicOnNextSceneLoad = true;
+    }
+
+    public void PlayRandomFillVoice()
+    {
+        PlayRandomVoice(fillVoiceResourcesPath, fillVoiceAudioSource);
+    }
+
+    void PlayRandomVoice(string resourcesPath, AudioSource preferredSource = null)
+    {
+        AudioSource source = preferredSource != null ? preferredSource : voiceAudioSource != null ? voiceAudioSource : audioSource;
+        if (source == null)
+            return;
+
+        var clips = Resources.LoadAll<AudioClip>(resourcesPath);
+        if (clips == null || clips.Length == 0)
+            return;
+
+        source.PlayOneShot(clips[Random.Range(0, clips.Length)], Mathf.Clamp01(voiceVolume));
     }
 }

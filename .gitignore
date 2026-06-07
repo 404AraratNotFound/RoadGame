@@ -70,3 +70,37 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/Resources/Voice/Fill.meta
+Assets/Resources/Voice/Fill/cheloval.mp3
+Assets/Resources/Voice/Fill/cheloval.mp3.meta
+Assets/Resources/Voice/Fill/kunem.mp3
+Assets/Resources/Voice/Fill/kunem.mp3.meta
+Assets/Resources/Voice/Fill/mamadzaaan.mp3
+Assets/Resources/Voice/Fill/mamadzaaan.mp3.meta
+Assets/Resources/Voice/Fill/muhosransk.mp3
+Assets/Resources/Voice/Fill/muhosransk.mp3.meta
+Assets/Resources/Voice/Fill/platili.mp3
+Assets/Resources/Voice/Fill/platili.mp3.meta
+Assets/Resources/Voice/GameOver.meta
+Assets/Resources/Voice/GameOver/Armenia.mp3
+Assets/Resources/Voice/GameOver/Armenia.mp3.meta
+Assets/Resources/Voice/GameOver/Armyanin.mp3
+Assets/Resources/Voice/GameOver/Armyanin.mp3.meta
+Assets/Resources/Voice/GameOver/Metal Gear Solid Game Over screen \[Clean background\].mp3
+Assets/Resources/Voice/GameOver/Metal Gear Solid Game Over screen \[Clean background\].mp3.meta
+Assets/Resources/Voice/GameOver/nachalnik.mp3
+Assets/Resources/Voice/GameOver/nachalnik.mp3.meta
+Assets/Resources/Voice/GameOver/preview_4.mp3
+Assets/Resources/Voice/GameOver/preview_4.mp3.meta
+Assets/Resources/Voice/GameOver/Vazgen.mp3
+Assets/Resources/Voice/GameOver/Vazgen.mp3.meta
+Assets/Resources/Voice/Start.meta
+Assets/Resources/Voice/Start/Asphalt.mp3
+Assets/Resources/Voice/Start/Asphalt.mp3.meta
+Assets/Resources/Voice/Start/DjJan.mp3
+Assets/Resources/Voice/Start/DjJan.mp3.meta
+Assets/Resources/Voice/Start/Mama dzan.mp3
+Assets/Resources/Voice/Start/Mama dzan.mp3.meta
+Assets/Resources/Voice/Start/Pognali.mp3
+Assets/Resources/Voice/Start/Pognali.mp3.meta
+Assets/Resources/Voice.meta

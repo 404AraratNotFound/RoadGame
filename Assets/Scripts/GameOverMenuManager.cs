@@ -4,13 +4,18 @@ using UnityEngine.SceneManagement;
 public class GameOverMenuManager : MonoBehaviour
 {
     public AudioSource gameOverAudioSource;
+    public string gameOverResourcesPath = "GameOver";
 
     public void PlayGameOverSound()
     {
         if (gameOverAudioSource == null)
             return;
 
-        gameOverAudioSource.Play();
+        var clips = Resources.LoadAll<AudioClip>(gameOverResourcesPath);
+        if (clips == null || clips.Length == 0)
+            return;
+
+        gameOverAudioSource.PlayOneShot(clips[Random.Range(0, clips.Length)]);
     }
 
     public void LoadMainMenu()
@@ -24,7 +29,8 @@ public class GameOverMenuManager : MonoBehaviour
         Time.timeScale = 1f;
         if (MusicManager.Instance != null)
         {
-            MusicManager.Instance.PlayRandom();
+            MusicManager.Instance.QueueMusicOnNextSceneLoad();
+            MusicManager.Instance.QueueStartVoiceOnNextSceneLoad();
         }
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

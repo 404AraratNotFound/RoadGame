@@ -13,6 +13,11 @@ public class Hole : MonoBehaviour
         if (!other.CompareTag("Player"))
             return;
 
+        if (MusicManager.Instance != null)
+        {
+            MusicManager.Instance.PlayRandomFillVoice();
+        }
+
         var speedManager = FindFirstObjectByType<GameSpeedManager>();
         if (speedManager != null)
         {
