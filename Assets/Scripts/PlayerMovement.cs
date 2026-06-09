@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 32f;
+    public float sensitivity = 0.5f;
     public float roadHalfWidth = 4f; // половина ширины дороги
     public bool inputBlocked;
 
@@ -15,17 +16,12 @@ public class PlayerMovement : MonoBehaviour
 
         float input = 0f;
 
-#if UNITY_EDITOR
-        // В редакторе используем клавиатуру
-        input = Input.GetAxis("Horizontal");
-#else
-        // На телефоне используем свайп
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
-            input = touch.deltaPosition.x * 0.01f;
-        }
-#endif
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            input = -1f;
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            input = 1f;
+
+        input *= sensitivity;
 
         // Двигаем ТОЛЬКО по мировому X
         Vector3 pos = transform.position;
